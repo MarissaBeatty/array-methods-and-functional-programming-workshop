@@ -1,16 +1,30 @@
 function forEach(callback, theArray) {
- 
- 
+
  // a for loop will go through each item in the array 
   for(var i = 0; i < theArray.length; i++) {
        callback(theArray[i]); //this is the callback function
     } 
 } 
 
-
 function map(mappingFunction, theArray) {
+  //declare a variable to represent our output: a new array with mapped elements
+  var mappedArray = [];
   
+  //make sure the function loops through each item in the array
+    theArray.forEach(function(element) {
+      
+      //decalare a new variable to represent the mapped elements
+      var mappedElements = mappingFunction(element);
+      
+      //push newly mapped elements to the output array
+      mappedArray.push(mappedElements);
+    })
+   return mappedArray;
 }
+
+
+
+
 
 function filter(predicate, theArray) {
 
