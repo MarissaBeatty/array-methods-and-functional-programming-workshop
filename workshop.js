@@ -1,17 +1,15 @@
 function forEach(callback, theArray) {
-  /*
-  This is a little hint to get you started ;)
-  
-  for (... theArray.length ...) {
-    ...
-    callback(...)
-    ...
-  }
-  */
-}
+ 
+ 
+ // a for loop will go through each item in the array 
+  for(var i = 0; i < theArray.length; i++) {
+       callback(theArray[i]); //this is the callback function
+    } 
+} 
+
 
 function map(mappingFunction, theArray) {
-
+  
 }
 
 function filter(predicate, theArray) {
