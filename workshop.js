@@ -19,20 +19,49 @@ function map(mappingFunction, theArray) {
       //push newly mapped elements to the output array
       mappedArray.push(mappedElements);
     })
-   return mappedArray;
+   return mappedArray; //our output
 }
-
-
-
-
 
 function filter(predicate, theArray) {
-
+  //new array to hold filtered elements
+  var filteredArray = [];
+  
+  //make sure we loop
+  theArray.forEach(function(element) {
+    
+    //declare a new variable to represent filtered elements
+    var filteredElement = predicate(element);
+    
+    //test the boolean result of filtering process; if true, push to new array
+    if(filteredElement) {
+      
+     
+    //push filtered elements to the output array
+    filteredArray.push(filteredElement);
+    }
+  });
+  
+  return filteredArray; //output
 }
+
+
 
 function every(predicate, theArray) {
+  //I want to write an if/else statement. If i find a variable that doesn't pass, 
+  //I'll return false. If all pass, I'll return true.
+    //loop
+    theArray.forEach(function(element) {
+      //check if an element in the array is not passing the predicate function
+      if(predicate(element) === false) {
+    return false;
+  } else {
+    return true;
+  }
+      
+    });
+} 
 
-}
+
 
 function some(predicate, theArray) {
 
