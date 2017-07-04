@@ -45,44 +45,55 @@ function filter(predicate, theArray) {
 }
 
 
-
 function every(predicate, theArray) {
-  //I want to write an if/else statement. If i find a variable that doesn't pass, 
-  //I'll return false. If all pass, I'll return true.
-    //loop
-    theArray.forEach(function(element) {
-      //check if an element in the array is not passing the predicate function
-      if(predicate(element) === false) {
-        return false;
-        } else {
-        return true;
-        }
-      
-  });
-} 
+  //check if it's an empty array and return true if it is
+  if(theArray.length === 0){
+     return true;
+   }
+  //loop over the elements in the array - forEach wasn't working anymore for me
+  for (var i = 0; i < theArray.length; i++){
+    if(!predicate(theArray[i])){
+       return false; //this should break the loop and stop running the function if it returns
+      } else {
+      return true;
+    } 
+  }  
+}  
+
 
 
 function some(predicate, theArray) {
+  //check if the array is empty
+  if(theArray.length === 0) {
+    return false;
+  }
  //I will write an if/else statement. If i find a variable that passes, 
   //I'll return true. If none pass, I'll return false.
     //loop
-    theArray.forEach(function(element) {
+    for(var i = 0; i < theArray.length; i++)
       //check if an element in the array is passing the predicate function
-      if(predicate(element)) {
+      if(predicate(theArray[i])) {
         return true;
-        } else if(theArray === []) {
-          return false
-        } else if(predicate(element) != true) {
+        } else if(predicate(theArray[i]) != true) {
         return false;
         } 
-      
-  });
 } 
 
 
 function indexOf(item, theArray) {
-
-}
+  if(theArray.length === 0) {
+    return -1;
+  }
+  for(var i = 0; i < theArray.length; i++) {
+    if (item === theArray[i]) {
+      return[i]; 
+    } else {
+      return -1;
+    }
+  }
+  var fruit = ["apple", "orange"];
+  console.log(indexOf("apple", fruit));
+} 
 
 function findIndex(predicate, theArray) {
 
