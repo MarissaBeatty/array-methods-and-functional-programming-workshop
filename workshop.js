@@ -53,19 +53,32 @@ function every(predicate, theArray) {
     theArray.forEach(function(element) {
       //check if an element in the array is not passing the predicate function
       if(predicate(element) === false) {
-    return false;
-  } else {
-    return true;
-  }
+        return false;
+        } else {
+        return true;
+        }
       
-    });
+  });
 } 
 
 
-
 function some(predicate, theArray) {
+ //I will write an if/else statement. If i find a variable that passes, 
+  //I'll return true. If none pass, I'll return false.
+    //loop
+    theArray.forEach(function(element) {
+      //check if an element in the array is passing the predicate function
+      if(predicate(element)) {
+        return true;
+        } else if(theArray === []) {
+          return false
+        } else if(predicate(element) != true) {
+        return false;
+        } 
+      
+  });
+} 
 
-}
 
 function indexOf(item, theArray) {
 
