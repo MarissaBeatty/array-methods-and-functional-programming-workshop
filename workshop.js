@@ -116,7 +116,25 @@ function findIndex(predicate, theArray) {
 //object array, where checking for one value doesn't make as much sense)
 
 function first(n, theArray) {
-
+//check that both params are defined 
+while(theArray) {
+  //check if n is negative; if it is, return an empty array
+    if(n < 0) {
+    return [];
+    //check if n is larger then the number of values in the array; if it is, return the whole array
+  } else if(n > theArray.length) {
+    return theArray;
+    //if n is not negative and is less than number of values in array, return n number of values
+  } else if(n >0 && n < theArray.length) {
+    return theArray.slice(0, n);
+  } 
+ }
+ 
+ //outside of case where theArray is defined - because theArray is is n position as a parameter, it runs as if it is n
+  if(theArray === undefined) {
+    return n[0];
+  }
+  
 }
 
 function last(n, theArray) {
