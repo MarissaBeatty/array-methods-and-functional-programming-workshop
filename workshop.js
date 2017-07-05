@@ -81,23 +81,39 @@ function some(predicate, theArray) {
 
 
 function indexOf(item, theArray) {
+  //check if empty array
   if(theArray.length === 0) {
     return -1;
   }
+  
+  //loop through the array
   for(var i = 0; i < theArray.length; i++) {
+    
+    //check if statement 
     if (item === theArray[i]) {
-      return[i]; 
-    } else {
-      return -1;
-    }
+      return i; 
+    } 
+  } if (item !== theArray[i]) {
+    return -1;
   }
   var fruit = ["apple", "orange"];
   console.log(indexOf("apple", fruit));
 } 
 
 function findIndex(predicate, theArray) {
-
+  //loop
+  for(var i = 0; i<theArray.length; i++) {
+    if (predicate(theArray[i]) === true) {
+      return i;
+    } 
+  } if(predicate(theArray[i]) === false) {
+      return -1;
+    }
+  
 }
+//we need both indexOf and findIndex because indexOf compares values in an array
+//while findIndex checks boolean values (more useful in the example of the pet 
+//object array, where checking for one value doesn't make as much sense)
 
 function first(n, theArray) {
 
